@@ -6,4 +6,12 @@ print(this_dir)
 
 def home_page_view(request, *args,**kwargs):
     print(this_dir)
-    return HttpResponse("<h1> hello world</h1>")
+    html_ = """<!DOCTYPE html>
+                <html>
+                    <body>
+                        <h1>This is my first page</h1>
+                    </body>
+                </html>"""
+    # html_file_path = this_dir /"home.html"
+    # html_ = html_file_path.read_text()
+    return HttpResponse(html_)
