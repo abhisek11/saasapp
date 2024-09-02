@@ -122,6 +122,11 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+#ignore vendor files
+src/staticfiles/vendors
+
+# ignore the local root and cdn 
+local-cdn/
 # Environments
 .env
 .venv
