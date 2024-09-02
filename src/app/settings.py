@@ -15,7 +15,6 @@ from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print("base_dir", BASE_DIR)
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,7 +26,6 @@ SECRET_KEY = config('DJANGO_SECRET_KEY', default=None)
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = str(os.environ.get('DJANGO_DEBUG')).lower()=='true'
 DEBUG = config('DJANGO_DEBUG', cast=bool)
-print("DEBUG", DEBUG, type(DEBUG))
 ALLOWED_HOSTS = [
     ".railway.app" #https://saas.prod.railway.app
 ]
@@ -96,7 +94,7 @@ DATABASES = {
 
 CONN_MAX_AGE = config("CONN_MAX_AGE", cast=int, default=30)
 DATABASE_URL = config("DATABASE_URL", default=None)
-print("DATABASE_URL", DATABASE_URL)
+
 if DATABASE_URL is not None:
     import dj_database_url
     DATABASES = {
@@ -140,7 +138,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-print("BASE_DIR", BASE_DIR)
 
 STATIC_URL = "static/"
 STATICFILES_BASE_DIR = BASE_DIR / "staticfiles"
